@@ -21,8 +21,11 @@ func TestPerformanceCompare2(t *testing.T) {
 	copy(s2, s1)
 	s3 := make([]int, n)
 	copy(s3, s1)
+	s4 := make([]int, n)
+	copy(s4, s1)
 	arrayutil.InvokeTest("SelectionSort", s2, SelectionSort)
 	arrayutil.InvokeTest("InsertionSort", s1, InsertionSort)
 	arrayutil.InvokeTest("BubbleSort", s3, BubbleSort)
+	arrayutil.InvokeTest("CocktailSort", s3, CocktailSort)
 
 }
