@@ -26,6 +26,10 @@ func TestPerformanceCompare2(t *testing.T) {
 	arrayutil.InvokeTest("SelectionSort", s2, SelectionSort)
 	arrayutil.InvokeTest("InsertionSort", s1, InsertionSort)
 	arrayutil.InvokeTest("BubbleSort", s3, BubbleSort)
-	arrayutil.InvokeTest("CocktailSort", s3, CocktailSort)
+	arrayutil.InvokeTest("CocktailSort", s4, CocktailSort)
+}
 
+func TestInsertionSort(t *testing.T) {
+	s := []int{10,9,8,7,6,5,4,3,2, 1}
+	arrayutil.InvokeTest("InsertionSort", s, InsertionSort)
 }

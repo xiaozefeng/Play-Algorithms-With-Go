@@ -1,5 +1,6 @@
 package basic
 
+// selection sort
 func SelectionSort(arr []int) []int {
 	n:= len(arr)
 	for i := 0; i < n; i++ {
@@ -9,7 +10,9 @@ func SelectionSort(arr []int) []int {
 				minIndex = j
 			}
 		}
-		arr[i], arr[minIndex] = swap(arr[i], arr[minIndex])
+		if minIndex != i {
+			arr[i], arr[minIndex] = swap(arr[i], arr[minIndex])
+		}
 	}
 	return arr
 }

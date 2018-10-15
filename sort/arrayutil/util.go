@@ -15,6 +15,7 @@ func GenerateRandomArray(length, rangeR int) []int {
 	return result
 }
 
+// 生成一个近乎有序的数组
 func GenerateNearlyOrderArray(length, swapTime int)[]int {
 	result:= make([]int, length)
 	for i := 0; i < length; i++ {

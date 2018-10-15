@@ -17,6 +17,7 @@ func InsertionSort(arr []int) []int {
 		//	arr[j], arr[j-1] = arr[j-1], arr[j]
 		//}
 
+		// 写法3 将交换位置改为赋值操作
 		e := arr[i]
 		j := i
 		for ; j > 0 && arr[j-1] > e; j-- {
