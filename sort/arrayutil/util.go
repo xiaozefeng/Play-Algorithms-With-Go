@@ -16,8 +16,8 @@ func GenerateRandomArray(length, rangeR int) []int {
 }
 
 // 生成一个近乎有序的数组
-func GenerateNearlyOrderArray(length, swapTime int)[]int {
-	result:= make([]int, length)
+func GenerateNearlyOrderArray(length, swapTime int) []int {
+	result := make([]int, length)
 	for i := 0; i < length; i++ {
 		result[i] = i
 	}
@@ -43,6 +43,18 @@ func IsSorted(arr []int) bool {
 func InvokeTest(fName string, arr []int, f func(arr []int) []int) {
 	now := time.Now()
 	arr = f(arr)
+	since := time.Since(now)
+	if IsSorted(arr) {
+		fmt.Printf("%s执行时间:%v 秒\n", fName, since.Seconds())
+	} else {
+		fmt.Println("数组无序")
+	}
+}
+
+// 执行测试
+func InvokeTestNoReturnValue(fName string, arr []int, f func(arr []int)) {
+	now := time.Now()
+	f(arr)
 	since := time.Since(now)
 	if IsSorted(arr) {
 		fmt.Printf("%s执行时间:%v 秒\n", fName, since.Seconds())
