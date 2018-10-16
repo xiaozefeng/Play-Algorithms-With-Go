@@ -23,13 +23,16 @@ func TestPerformanceCompare2(t *testing.T) {
 	copy(s3, s1)
 	s4 := make([]int, n)
 	copy(s4, s1)
+	s5 := make([]int, n)
+	copy(s5, s1)
 	arrayutil.InvokeTest("SelectionSort", s2, SelectionSort)
 	arrayutil.InvokeTest("InsertionSort", s1, InsertionSort)
 	arrayutil.InvokeTest("BubbleSort", s3, BubbleSort)
 	arrayutil.InvokeTest("CocktailSort", s4, CocktailSort)
+	arrayutil.InvokeTestNoReturnValue("QuickSort", s5, QuickSort)
 }
 
 func TestInsertionSort(t *testing.T) {
-	s := []int{10,9,8,7,6,5,4,3,2, 1}
+	s := []int{10, 9, 8, 7, 6, 5, 4, 3, 2, 1}
 	arrayutil.InvokeTest("InsertionSort", s, InsertionSort)
 }
