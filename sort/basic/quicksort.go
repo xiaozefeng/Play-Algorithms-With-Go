@@ -34,3 +34,24 @@ func partition(values []int, l, r int) int {
 	values[l], values[j] = values[j], values[l]
 	return j
 }
+
+// 第二种实现
+func QSort(data []int) {
+	if len(data) <= 1 {
+		return
+	}
+	mid := data[0]
+	left, right := 0, len(data)-1
+	for i := 1; i <= right; {
+		if data[i] > mid {
+			data[i], data[right] = data[right], data[i]
+			right--
+		} else {
+			data[i], data[left] = data[left], data[i]
+			left++
+			i++
+		}
+	}
+	QSort(data[:left])
+	QSort(data[left+1:])
+}
