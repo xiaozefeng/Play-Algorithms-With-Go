@@ -2,7 +2,7 @@ package basic
 
 func InsertionSort(arr []int) []int {
 	n := len(arr)
-	for i := 0; i < n; i++ {
+	for i := 1; i < n; i++ {
 		// 写法1
 		//for j := i; j > 0; j-- {
 		//	if arr[j] < arr[j-1] {

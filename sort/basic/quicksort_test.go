@@ -6,7 +6,7 @@ import (
 )
 
 func TestQuickSort(t *testing.T) {
-	//s:= arrayutil.GenerateRandomArray(200000, 1000000)
-	s := []int{3, 2, 1}
+	s:= arrayutil.GenerateNearlyOrderArray(100000, 10)
+	//s := []int{3, 2, 1, 0}
 	arrayutil.InvokeTestNoReturnValue("quickSort", s, QuickSort)
 }

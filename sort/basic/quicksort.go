@@ -1,5 +1,7 @@
 package basic
 
+import "math/rand"
+
 func QuickSort(values []int) {
 	quickSort(values, 0, len(values)-1)
 }
@@ -18,6 +20,9 @@ func quickSort(values []int, l, r int) {
 // 对arr[l...r]部分进行partition操作
 // 返回p 使得arr[l ...p-1] < arr[p] ; arr[p+1...r] >arr[p]
 func partition(values []int, l, r int) int {
+	// 为了避免数组是在一个近乎有序的情况下，快排退化成一个n方级别的算法，从数据的随机位置取一个数作为基准数
+	rnd := rand.Intn(r)%(r-l+1) + l
+	values[l], values[rnd] = values[rnd], values[l]
 	v := values[l]
 	j := l
 	for i := l + 1; i <= r; i++ {
